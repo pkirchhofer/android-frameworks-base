@@ -371,9 +371,6 @@ private:
     size_t mPendingEventCount;
     size_t mPendingEventIndex;
     bool mPendingINotify;
-
-    // Set to the number of CPUs.
-    int32_t mNumCpus;
 };
 
 }; // namespace android
