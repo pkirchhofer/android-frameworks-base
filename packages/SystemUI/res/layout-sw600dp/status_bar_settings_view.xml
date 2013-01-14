@@ -48,6 +48,23 @@
     </LinearLayout>
     <View style="@style/StatusBarPanelSettingsPanelSeparator" />
 
+    <!-- Notifications / Power -->
+    <LinearLayout
+            android:id="@+id/power"
+            style="@style/StatusBarPanelSettingsRow"
+            >
+        <ImageView
+                android:id="@+id/power"
+                style="@style/StatusBarPanelSettingsIcon"
+                android:src="@drawable/ic_notify_clear_pressed"
+                />
+        <TextView
+                style="@style/StatusBarPanelSettingsContents"
+                android:text="@string/status_bar_settings_power"
+                />
+    </LinearLayout>
+    <View style="@style/StatusBarPanelSettingsPanelSeparator" />
+
     <!-- Network -->
     <LinearLayout
             android:id="@+id/network"

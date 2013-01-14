@@ -28,6 +28,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.internal.app.ShutdownThread;
 import com.android.systemui.R;
 import com.android.systemui.statusbar.policy.AirplaneModeController;
 import com.android.systemui.statusbar.policy.AutoRotateController;
@@ -41,6 +42,7 @@ public class SettingsView extends LinearLayout implements View.OnClickListener {
 
     AirplaneModeController mAirplane;
     AutoRotateController mRotate;
+//    VolumeController mVolumes;
     BrightnessController mBrightness;
     DoNotDisturbController mDoNotDisturb;
 
@@ -63,11 +65,14 @@ public class SettingsView extends LinearLayout implements View.OnClickListener {
         findViewById(R.id.network).setOnClickListener(this);
         mRotate = new AutoRotateController(context,
                 (CompoundButton)findViewById(R.id.rotate_checkbox));
+//        mVolumes = new VolumeController(context,
+//                (ToggleSlider)findViewById(R.id.volumes));
         mBrightness = new BrightnessController(context,
                 (ToggleSlider)findViewById(R.id.brightness));
         mDoNotDisturb = new DoNotDisturbController(context,
                 (CompoundButton)findViewById(R.id.do_not_disturb_checkbox));
         findViewById(R.id.settings).setOnClickListener(this);
+        findViewById(R.id.power).setOnClickListener(this);
     }
 
     @Override
@@ -84,6 +89,9 @@ public class SettingsView extends LinearLayout implements View.OnClickListener {
                 break;
             case R.id.settings:
                 onClickSettings();
+                break;
+            case R.id.power:
+                onClickPower();
                 break;
         }
     }
@@ -105,6 +113,13 @@ public class SettingsView extends LinearLayout implements View.OnClickListener {
     private void onClickSettings() {
         getContext().startActivity(new Intent(Settings.ACTION_SETTINGS)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        getStatusBarManager().collapse();
+    }
+
+    // Power
+    // ----------------------------
+    private void onClickPower() {
+        ShutdownThread.shutdown(mContext, true);
         getStatusBarManager().collapse();
     }
 }
