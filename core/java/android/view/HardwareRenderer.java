@@ -135,6 +135,9 @@ public abstract class HardwareRenderer {
      *         false otherwise
      */
     public static boolean isAvailable() {
+        if (SystemProperties.get("debug.egl.hw").equals("0")) {
+            return false;
+        }
         return GLES20Canvas.isAvailable();
     }
 
