@@ -14383,6 +14383,7 @@ package android.os {
     field public static final java.lang.String BRAND;
     field public static final java.lang.String CPU_ABI;
     field public static final java.lang.String CPU_ABI2;
+    field public static final java.lang.String CPU_ABI3;
     field public static final java.lang.String DEVICE;
     field public static final java.lang.String DISPLAY;
     field public static final java.lang.String FINGERPRINT;
