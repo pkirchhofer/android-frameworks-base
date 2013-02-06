@@ -24,6 +24,7 @@
         >
 
     <!-- Airplane mode -->
+    <!-- Broken
     <LinearLayout
             android:id="@+id/airplane"
             style="@style/StatusBarPanelSettingsRow"
@@ -47,6 +48,7 @@
                 />
     </LinearLayout>
     <View style="@style/StatusBarPanelSettingsPanelSeparator" />
+    -->
 
     <!-- Notifications / Power -->
     <LinearLayout
@@ -84,6 +86,7 @@
     <View style="@style/StatusBarPanelSettingsPanelSeparator" />
 
     <!-- Rotation lock -->
+    <!-- Disabled: Joggler has no rotation sensor
     <LinearLayout
             android:id="@+id/rotate"
             style="@style/StatusBarPanelSettingsRow"
@@ -107,6 +110,7 @@
                 />
     </LinearLayout>
     <View style="@style/StatusBarPanelSettingsPanelSeparator" />
+    -->
 
     <!-- Brightness -->
     <LinearLayout style="@style/StatusBarPanelSettingsRow" >
@@ -127,6 +131,7 @@
     <View style="@style/StatusBarPanelSettingsPanelSeparator" />
 
     <!-- Notifications / Do not disturb -->
+    <!-- Broken: Causes SystemUI crashes
     <LinearLayout
             android:id="@+id/do_not_disturb"
             style="@style/StatusBarPanelSettingsRow"
@@ -149,6 +154,7 @@
                 />
     </LinearLayout>
     <View style="@style/StatusBarPanelSettingsPanelSeparator" />
+    -->
 
     <!-- Link to settings -->
     <LinearLayout
